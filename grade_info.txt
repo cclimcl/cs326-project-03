@@ -1,0 +1,35 @@
+rm -rf tests
+cc -Wall -g -pthread -fPIC -shared  -DLOGGER=1 allocator.c -o allocator.so
+rm -rf tests
+git clone https://github.com/USF-OS/Memory-Allocator-Tests.git tests
+Building test programs
+make[1]: Entering directory '/repos/P3-junior-senior/tests/progs'
+cc -Wall -g -pthread -Wno-unused-variable  allocations-1.c -o allocations-1
+cc -Wall -g -pthread -Wno-unused-variable  allocations-2.c -o allocations-2
+cc -Wall -g -pthread -Wno-unused-variable  allocations-3.c -o allocations-3
+cc -Wall -g -pthread -Wno-unused-variable    print-test.c   -o print-test
+cc -Wall -g -pthread -Wno-unused-variable    scribble.c   -o scribble
+cc -Wall -g -pthread -Wno-unused-variable    thread-safety.c   -o thread-safety
+make[1]: Leaving directory '/repos/P3-junior-senior/tests/progs'
+Running Tests: (v9)
+ * 01 ls                   [1 pts]  [  OK  ]
+ * 02 Free                 [1 pts]  [  OK  ]
+ * 03 Basic First Fit      [1 pts]  [  OK  ]
+ * 04 Basic Best Fit       [1 pts]  [  OK  ]
+ * 05 Basic Worst Fit      [1 pts]  [  OK  ]
+ * 06 First Fit            [1 pts]  [  OK  ]
+ * 07 Best Fit             [1 pts]  [  OK  ]
+ * 08 Worst Fit            [1 pts]  [  OK  ]
+ * 09 Scribbling           [1 pts]  [  OK  ]
+ * 10 Thread Safety        [1 pts]  [  OK  ]
+ * 11 Unix Utilities       [1 pts]  [ SEGV ]
+ * 12 Static Analysis      [1 pts]  [  OK  ]
+ * 13 Documentation        [1 pts]  [  OK  ]
+Execution complete. [12/13 pts] (92.3%)
+
+View test output (enter number, q to quit, r to rerun): 
+
+Nice work. Awesome README as usual, and thanks to you both for being such great
+students to have in class.
+
+15/15
